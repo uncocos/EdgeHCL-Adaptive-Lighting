@@ -36,6 +36,17 @@ The optimized heterogeneous architecture significantly reduces inference latency
 ## Installation and Deployment
 Ensure the Hailo-8L driver and MediaPipe environment are properly configured before execution.
 
+## Credits and References
+
+### Core Inference Framework
+This project utilizes and extends the inference pipeline developed by **AlbertaBeef**, which integrates MediaPipe with Hailo-8 acceleration. 
+- **Reference Project**: [Accelerating MediaPipe Models with Hailo-8](https://www.hackster.io/AlbertaBeef/accelerating-the-mediapipe-models-with-hailo-8-24e037)
+- **Contribution**: We have optimized the original sequential processing into a **Heterogeneous Finite State Machine (FSM)** and implemented the **Attention Visual Analyzer (AVA)** for real-time HCL control.
+
+### Open Source Libraries
+- **MediaPipe**: For high-fidelity face mesh and landmark extraction.
+- **Hailo RT TAPPAS**: For NPU-accelerated face detection.
+- **Adafruit libraries**: For PCA9685 and BH1750 hardware interfacing.
 ```bash
 # Launch the main adaptive lighting pipeline
 python main_hcl_system.py --model_path ./models/hailo8l_face.hef --mqtt_broker localhost
